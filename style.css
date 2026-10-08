@@ -1,0 +1,577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1d2a24;
+    background: #f7f7f3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 6%;
+
+    color: white;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo span {
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.logo strong {
+    font-size: 19px;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    opacity: 0.6;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    height: 100vh;
+    min-height: 650px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.35),
+            rgba(0,0,0,0.55)
+        ),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee")
+        center/cover no-repeat;
+
+    color: white;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.small-title {
+    font-size: 12px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: 0.95;
+    font-weight: 500;
+}
+
+.hero h1 span {
+    font-style: italic;
+}
+
+.hero-content > p:not(.small-title) {
+    max-width: 500px;
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.primary {
+    background: white;
+    color: #18251f;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 1px solid white;
+}
+
+.secondary:hover {
+    background: white;
+    color: #18251f;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 6%;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.scroll-down div {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.section {
+    padding: 110px 7%;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #64746b;
+}
+
+.section h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.section-heading {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.section-heading > p:last-child {
+    margin-top: 20px;
+    color: #69736e;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.section-image {
+    height: 600px;
+}
+
+.image-placeholder {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(30,60,45,0.3),
+            rgba(30,60,45,0.6)
+        ),
+        url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e")
+        center/cover;
+
+    color: white;
+    letter-spacing: 5px;
+    font-size: 14px;
+}
+
+.section-content p:not(.section-label) {
+    margin-top: 20px;
+    line-height: 1.8;
+    color: #66706b;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   EXPLORE
+========================= */
+
+.explore {
+    background: #e9eee9;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+}
+
+.card-image {
+    height: 300px;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 25px;
+
+    color: white;
+
+    background-position: center;
+    background-size: cover;
+}
+
+.belvedere {
+    background-image:
+        linear-gradient(transparent, rgba(0,0,0,.6)),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b");
+}
+
+.chalet {
+    background-image:
+        linear-gradient(transparent, rgba(0,0,0,.6)),
+        url("https://images.unsplash.com/photo-1500534623283-312aade485b7");
+}
+
+.lake {
+    background-image:
+        linear-gradient(transparent, rgba(0,0,0,.6)),
+        url("https://images.unsplash.com/photo-1473445361085-b9a07f55608b");
+}
+
+.card-image span {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-body h3 {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.card-body p {
+    margin: 15px 0 25px;
+    color: #707874;
+    line-height: 1.6;
+}
+
+.card-body a {
+    font-weight: bold;
+}
+
+
+/* =========================
+   TOURS
+========================= */
+
+.tours {
+    background: #1c2a23;
+    color: white;
+}
+
+.tours .section-label {
+    color: #aebdb3;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #526057;
+}
+
+.tour-card {
+    background: #1c2a23;
+    padding: 45px;
+}
+
+.tour-card span {
+    font-size: 12px;
+    color: #9fac9f;
+}
+
+.tour-card h3 {
+    margin: 45px 0 15px;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.tour-card p {
+    color: #b8c0bb;
+    line-height: 1.7;
+}
+
+.tour-card button {
+    margin-top: 30px;
+    padding: 10px 0;
+
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+
+    color: white;
+    cursor: pointer;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 15px;
+}
+
+.gallery-item {
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 25px;
+
+    color: white;
+    background-position: center;
+    background-size: cover;
+}
+
+.gallery-one {
+    grid-row: span 2;
+
+    background-image:
+        linear-gradient(transparent, rgba(0,0,0,.6)),
+        url("https://images.unsplash.com/photo-1448375240586-882707db888b");
+}
+
+.gallery-two {
+    background-image:
+        linear-gradient(transparent, rgba(0,0,0,.6)),
+        url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429");
+}
+
+.gallery-three {
+    background-image:
+        linear-gradient(transparent, rgba(0,0,0,.6)),
+        url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+}
+
+.gallery-four {
+    display: none;
+}
+
+
+/* =========================
+   VISIT
+========================= */
+
+.visit {
+    background:
+        linear-gradient(
+            rgba(24,40,32,.75),
+            rgba(24,40,32,.75)
+        ),
+        url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e")
+        center/cover;
+
+    color: white;
+}
+
+.visit-content {
+    max-width: 900px;
+}
+
+.visit-info {
+    display: flex;
+    gap: 100px;
+    margin: 45px 0;
+}
+
+.visit-info strong {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.visit-info p {
+    margin-top: 12px;
+    line-height: 1.6;
+    color: #d4dbd6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111b16;
+    color: white;
+
+    padding: 70px 7%;
+
+    text-align: center;
+}
+
+footer .logo {
+    align-items: center;
+}
+
+footer > p {
+    margin: 20px auto;
+    color: #9ba59f;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.footer-links a {
+    font-size: 14px;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        min-height: 700px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .section-image {
+        height: 450px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 350px 250px 250px;
+    }
+
+    .gallery-one {
+        grid-row: auto;
+    }
+
+    .visit-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
